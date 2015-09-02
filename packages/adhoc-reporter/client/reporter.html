@@ -1,0 +1,20 @@
+<template name="reporter">
+   {{!-- requires schemas, formats --}}
+   <div class="container-fluid">
+      <div class="row">
+         <div class="col-xs-2 container-fluid">
+            <div class="row">
+               <button class="btn" id="resetTree">Reset</button>
+            </div>
+            <div class="row" style="overflow:auto">
+               <div id="ahr-collectionTree"></div>
+            </div>
+          </div>
+          <div class="col-xs-10">
+             {{> reporterFiltering schema=getSchema fields=getFields reachableCollections=reachableCollections }}
+
+             {{> reporterResults selector=selector tableDOM=tableDOM}}
+          </div>
+       </div>
+    </div>
+</template>
