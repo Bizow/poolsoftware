@@ -25,6 +25,7 @@ Package.onUse(function(api) {
     api.addFiles('adhoc-client.js', 'client');
     api.addFiles('books.js');
     api.addFiles('adhoc-server.js', 'server');
+    api.export('Books');
 });
 
 Package.onTest(function(api) {
