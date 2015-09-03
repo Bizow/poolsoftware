@@ -18,6 +18,7 @@ Template.reporter.helpers({
 });
 
 Template.reporter.created = function(){
+    console.log(this);
     var template = Template.instance();
 
     // a "keySet" is a set of keys that go together to connect a set of collections
@@ -41,7 +42,9 @@ Template.reporter.created = function(){
     template.schema = [];
     template.fields = {};
 
+    console.log(schemas)
     _.each(schemas, function (collection, colName) {
+        console.log(collection, colName)
         var collectionData = {
             text: collection.label,
             id: colName,
@@ -53,6 +56,7 @@ Template.reporter.created = function(){
 
         // read the schema from the corresponding schema item
         _.each(collection.fields, function(fieldDetail, fieldName) {
+            console.log(fieldDetail, fieldName)
             var child = {
                 id: fieldName + ':' + colName,    //use ':' because item.name can't start with it
                 text: fieldDetail.label,
