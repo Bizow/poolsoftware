@@ -6,6 +6,9 @@
     <div style="padding-bottom: 100px;">
     {{> loginButtons}}
 </div>
-    {{> reporter "{'Books': {label: 'Books', fields: {title: {label: 'Title'}}}}"}}
+    {{> reportRenderer}}
 </body>
 
+<template name="reportRenderer">
+    {{> reporter schemas=bookSchema}}
+</template>
