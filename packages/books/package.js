@@ -1,5 +1,5 @@
 Package.describe({
-    name: 'app',
+    name: 'books',
     version: '0.0.1',
     // Brief, one-line summary of the package.
     summary: '',
@@ -12,15 +12,12 @@ Package.describe({
 
 Package.onUse(function(api) {
     api.versionsFrom('1.1.0.3');
-    //api.use('adhoc');
-    api.use('books');
+    api.addFiles('books.js');
     api.export('Books');
-
-    //api.use('ftp-server');
 });
 
 Package.onTest(function(api) {
     api.use('tinytest');
-    api.use('app');
-    api.addFiles('app-tests.js');
+    api.use('books');
+    api.addFiles('books-tests.js');
 });

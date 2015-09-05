@@ -1,0 +1,28 @@
+<template name="reporterLayout">
+    <div class="container-fluid">
+        <div class="container">
+          {{> reporterNav}}
+          {{> yield}}
+        </div>
+    </div>
+</template>
+
+<template name="reporter">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="row">
+                <div class="col-md-12">
+                  {{> createReport}}
+                </div>
+                <div class="col-md-12">
+                  {{> openSavedReport}}
+                </div>
+            </div>
+        </div>
+        <div class="col-md-8">
+          {{> reportDataTable}}
+        </div>
+    </div>
+</template>
+
+

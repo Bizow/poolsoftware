@@ -1,0 +1,78 @@
+
+<template name="createReport">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">Create Report</h3>
+        </div>
+        <div class="panel-body">
+            <div class="row">
+                <div style="padding-bottom: 20px;" class="col-sm-3">{{> collectionDropDown}}</div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4">{{> columnDropDown}}</div>
+                <div style="padding-bottom: 20px;" class="col-sm-3">{{> filterDropDown}}</div>
+                <div class="col-sm-12">{{> valueInput}}</div>
+            </div>
+        </div>
+    </div>
+</template>
+
+<template name="collectionDropDown">
+    <div class="dropdown">
+        <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
+            {{selectedCollection.name}}
+            <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu">
+            <li class="dropdown-header">Collections</li>
+            {{#each collections}}
+                <li><a data-collection href="#">{{name}}</a></li>
+            {{else}}
+                <li><a href="#">No collections found</a></li>
+            {{/each}}
+        </ul>
+    </div>
+</template>
+
+<template name="columnDropDown">
+    <div class="dropdown">
+        <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
+            {{selectedColumn.name}}
+            <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu">
+            <li class="dropdown-header">Columns</li>
+            {{#each columnHeaders}}
+                <li><a data-column href="#">{{name}}</a></li>
+            {{/each}}
+        </ul>
+    </div>
+</template>
+
+<template name="filterDropDown">
+    <div class="dropdown">
+        <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
+            {{selectedFilter.name}}
+            <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu">
+            {{#each filters}}
+            <li><a data-filter href="#">{{name}}</a></li>
+            {{/each}}
+        </ul>
+    </div>
+</template>
+
+<template name="valueInput">
+    <form data-value-form class="form-inline">
+        <div class="form-group">
+            <input data-value-input type="text" class="form-control" placeholder="..." value="{{value}}">
+        </div>
+        <button data-clear-input type="button" class="btn btn-default">
+            <span class="glyphicon glyphicon-erase" aria-hidden="true"></span>
+        </button>
+        <button type="submit" class="btn btn-default">
+            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+        </button>
+    </form>
+</template>
