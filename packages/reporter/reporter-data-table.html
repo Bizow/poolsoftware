@@ -3,17 +3,17 @@
     <div style="padding: 0px; overflow: auto;" class="jumbotron">
         <table class="table table-striped">
             <thead>
-              <tr>
-                  {{#each columnHeaders}}
+            <tr>
+                {{#each columnHeaders}}
                     <th>{{name}}</th>
-                  {{/each}}
-              </tr>
+                {{/each}}
+            </tr>
             </thead>
             <tbody>
             {{#each rows}}
                 <tr>
                     {{#each columns}}
-                      <td>{{value}}</td>
+                        <td>{{value}}</td>
                     {{/each}}
                 </tr>
             {{/each}}
