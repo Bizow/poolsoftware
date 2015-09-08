@@ -1,0 +1,38 @@
+
+<template name="openSavedReport">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">Open Saved Report</h3>
+        </div>
+        <div class="panel-body">
+            <form class="form-inline" style="padding: 20px;">
+                <div class="form-group">
+                    <label class="sr-only" for="exampleInputEmail3">
+                        Search
+                    </label>
+                    <input type="text" class="form-control" id="exampleInputEmail3" placeholder="Search...">
+                </div>
+                <button type="submit" class="btn btn-default">
+                    Search
+                </button>
+            </form>
+            <div class="list-group">
+                {{#each savedReports}}
+                    <li  class="list-group-item">
+                        <a href="#" data-view-report style="white-space: normal; width: 100%;" type="button" class="savedReport truncate">
+                            {{collection.name}} {{column.name}} {{filter.name}} {{value}}
+                            <span data-remove-report  class="removeReport pull-right">
+                                <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                            </span>
+                        </a>
+
+                    </li>
+                {{else}}
+                    <a href="#" class="list-group-item active">
+                        No saved reports
+                    </a>
+                {{/each}}
+            </div>
+        </div>
+    </div>
+</template>
