@@ -3,7 +3,7 @@
 
 ##### Modulus DB
 
-<pre>export MONGO_URL:mongodb://courtsec:courtseC@apollo.modoulusmongo.net:27017/ap2yNuxu</pre>
+<pre>export MONGO_URL:mongodb://username:password@apollo.modoulusmongo.net:27017/ap2yNuxu</pre>
 
 
 ###### Harrys Notes
