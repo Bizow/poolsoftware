@@ -1,0 +1,60 @@
+<head>
+    <title>Uploader</title>
+</head>
+
+<body>
+    {{#if currentUser}}
+        {{> uploaderForm}}
+        {{> podcastList}}
+    {{else}}
+        {{> loginButtons}}
+    {{/if}}
+</body>
+
+<template name="uploaderForm">
+    <form data-upload-form>
+        Name:<br>
+        <input type="text" name="name" value="">
+        <br><br>
+        Market:<br>
+        <input type="text" name="market" value="">
+        <br><br>
+        Callsign:<br>
+        <input type="text" name="callsign" value="">
+        <br><br>
+        Supported audio files: .mp3, .m4a<br>
+        <input type="file" name="file" value="">
+        <br><br>
+        <input type="submit" value="Upload">
+    </form>
+</template>
+
+<template name="podcastList">
+    <ul style="list-style-type:none">
+        {{#each podcasts}}
+            {{> podcastItem}}
+        {{else}}
+            <li>No podcasts found</li>
+        {{/each}}
+    </ul>
+</template>
+
+<template name="podcastItem">
+    <li>
+        <b>Uploaded At: </b>{{uploadedAt}}<br/>
+        <b>Market: </b>{{podcastInfo.market}}<br/>
+        <b>Callsign: </b>{{podcastInfo.callsign}}<br/>
+        <b>Size: </b>{{size}}<br/>
+        {{#if isUploaded}}
+            <b>Url: </b>{{fullUrl}}
+        {{else}}
+           <b>Upload Progress:</b> {{> FS.UploadProgressBar}}
+        {{/if}}
+        <br/><br/>
+        <button data-download-podcast type="button">Download</button>
+        <button data-remove-podcast type="button">Delete</button>
+        <br/><br/>
+    </li>
+</template>
+
+

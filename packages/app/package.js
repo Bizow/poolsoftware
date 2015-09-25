@@ -12,11 +12,7 @@ Package.describe({
 
 Package.onUse(function(api) {
     api.versionsFrom('1.1.0.3');
-    //api.use('adhoc');
-    api.use('books');
-    api.export('Books');
-
-    //api.use('ftp-server');
+    api.use('uploader');
 });
 
 Package.onTest(function(api) {
