@@ -1,8 +1,4 @@
 
-Accounts.ui.config({
-    passwordSignupFields: 'USERNAME_ONLY'
-});
-
 PodcastUploader.submitForm = function (template) {
     var self = this;
     var fsFile = self.formToFsFile(template);

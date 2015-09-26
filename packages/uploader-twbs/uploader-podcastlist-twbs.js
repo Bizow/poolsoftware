@@ -2,6 +2,9 @@
 
 FlowRouter.route('/podcasts', {
     action: function(params, queryParams) {
+        if(!Meteor.user()){
+            FlowRouter.go('/');
+        }
         BlazeLayout.render('layout', {main: 'podcastList' });
     }
 });

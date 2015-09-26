@@ -17,9 +17,10 @@ Package.onUse(function(api) {
     api.use('tracker');
     api.use('uploader');
     api.use('twbs:bootstrap');
-    api.use('useraccounts:bootstrap');
+    api.use('accounts-ui');
+    //api.use('ian:accounts-ui-bootstrap-3');
     api.use('kadira:blaze-layout');
-    api.use('kadira:flow-router');
+    api.use('kadira:flow-router@2.6.2');
     api.addFiles('uploader-nav-twbs.html', 'client');
     api.addFiles('uploader-form-twbs.html', 'client');
     api.addFiles('uploader-form-twbs.js','client');

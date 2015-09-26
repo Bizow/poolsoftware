@@ -2,6 +2,9 @@
 FlowRouter.route('/success/:podcastId', {
     action: function(params, queryParams) {
         console.log(params);
+        if(!Meteor.user()){
+            FlowRouter.go('/');
+        }
         BlazeLayout.render('layout', {main: 'podcastUploadSuccess' });
     }
 });

@@ -1,13 +1,31 @@
 
+
+Accounts.ui.config({
+    passwordSignupFields: 'USERNAME_ONLY'
+});
+
+Meteor.startup(function () {
+   Tracker.autorun(function () {
+      if(!Meteor.user()){
+          FlowRouter.go('/');
+      }
+   });
+});
+
 FlowRouter.route('/', {
     action: function(params, queryParams) {
+        console.log('/')
         BlazeLayout.render('layout');
     }
 });
 
 FlowRouter.route('/upload', {
     action: function(params, queryParams) {
-        BlazeLayout.render('layout', {main: 'podcastUploadForm' });
+        if(!Meteor.user()){
+            FlowRouter.go('/');
+        }else{
+            BlazeLayout.render('layout', {main: 'podcastUploadForm' });
+        }
     }
 });
 
@@ -50,7 +68,7 @@ Template.podcastUploadForm.events({
         event.preventDefault();
         var fsFile = PodcastUploader.submitForm(template);
         uploadingId = fsFile._id;
-        console.log(uploadingId)
+        console.log(uploadingId);
         return false;
     }
 });

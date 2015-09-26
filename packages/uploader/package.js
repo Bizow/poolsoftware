@@ -14,7 +14,6 @@ Package.describe({
 Package.onUse(function(api) {
     api.versionsFrom('1.1.0.3');
     api.use('accounts-password');
-    api.use('accounts-ui');
     api.use('reactive-var');
     api.use('blaze-html-templates');
     api.use('mongo');
