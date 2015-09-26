@@ -1,0 +1,38 @@
+
+
+<template name="podcastUploadForm">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">Upload Podcast</h3>
+        </div>
+        <div class="panel-body">
+            {{#if uploadProgress.value}}
+                <div class="progress">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="{{uploadProgress.value}}" aria-valuemin="0" aria-valuemax="100" style="{{uploadProgress.style}}">
+                    </div>
+                </div>
+            {{else}}
+                <form data-upload-form>
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" class="form-control" name="name" placeholder="">
+                    </div>
+                    <div class="form-group">
+                        <label for="market">Market</label>
+                        <input type="text" class="form-control" name="market" placeholder="">
+                    </div>
+                    <div class="form-group">
+                        <label for="callsign">Callsign</label>
+                        <input type="text" class="form-control" name="callsign" placeholder="">
+                    </div>
+                    <div class="form-group">
+                        <label for="file">Supported audio files: .mp3, .m4a</label>
+                        <input type="file" name="file">
+                        <!--<p class="help-block">Example block-level help text here.</p>-->
+                    </div>
+                    <button type="submit" class="btn btn-default">Upload</button>
+                </form>
+            {{/if}}
+        </div>
+    </div>
+</template>

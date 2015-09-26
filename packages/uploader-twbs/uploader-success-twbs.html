@@ -1,0 +1,14 @@
+
+
+<template name="podcastUploadSuccess">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">Success!</h3>
+        </div>
+        <div class="panel-body">
+            {{#with podcast}}
+                {{> podcastListItem}}
+            {{/with}}
+        </div>
+    </div>
+</template>

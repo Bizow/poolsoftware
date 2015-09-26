@@ -23,8 +23,9 @@ Package.onUse(function(api) {
     api.use('cfs:ui');
     api.addFiles('uploader-shared.js');
     api.addFiles('uploader-server.js', 'server');
-    api.addFiles('uploader.html', 'client');
+    //api.addFiles('uploader.html', 'client');
     api.addFiles('uploader-client.js', 'client');
+    api.export('PodcastUploader');
 });
 
 Package.onTest(function(api) {
