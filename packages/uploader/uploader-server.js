@@ -20,5 +20,5 @@ PodcastUploader.podcastMedia.allow({
 
 
 Meteor.publish('podcasts', function () {
-    return PodcastUploader.podcastMedia.find({});
+    return PodcastUploader.podcastMedia.find({userId: this.userId});
 });
