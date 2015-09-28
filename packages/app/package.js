@@ -14,6 +14,7 @@ Package.onUse(function(api) {
     api.versionsFrom('1.1.0.3');
     api.use('uploader');
     api.use('uploader-twbs');
+    api.use('uploader-xml');
 });
 
 Package.onTest(function(api) {
