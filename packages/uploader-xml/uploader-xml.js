@@ -31,7 +31,12 @@ PodcastXml.generate = function (podcast) {
             'title': {'#text': 'Shake Shake Shake Your Spices'},
             'itunes:author': {'#text': podcast.author},
             'itunes:subtitle': {'#text': 'A short primer on table spices'},
-            'itunes:summary': {'#text': 'Summary'}
+            'itunes:summary': {'#cdata': 'This week we talk about <a href="https://itunes/apple.com/us/book/antique-trader-salt-pepper/id429691295?mt=11">salt and pepper shakers</a>,comparing and contrasting pour rates, construction materials, and overall aesthetics. Come and join the party'},
+            'itunes:image': {'@href': 'http://example.com/podcasts/everything/AllAboutEverything/Episode1.jpg'},
+            'enclosure': {'@length': '8727310', '@type': 'audio/x-m4a', '@url': 'http://example.com/podcasts/everything/AllAboutEverythingEpisode3.m4a'},
+            'guid': {'#text': 'http://example.com/podcasts/archive/aae20140615.m4a'},
+            'pubDate': {'#text': 'Wed, 15 Jun 2014 19:00:00 GMT'},
+            'itunes:duration': {'#text': '7:04'}
         }}
     ];
 
