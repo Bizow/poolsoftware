@@ -3,7 +3,7 @@
 <template name="podcastUploadForm">
     <div class="panel panel-default">
         <div class="panel-body">
-            {{#if uploadProgress.value}}
+            {{#if uploading}}
                 <div class="progress">
                     <div class="progress-bar" role="progressbar" aria-valuenow="{{uploadProgress.value}}" aria-valuemin="0" aria-valuemax="100" style="{{uploadProgress.style}}">
                     </div>

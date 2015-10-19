@@ -1,3 +1,9 @@
+Meteor.startup(function () {
+    Meteor.users.remove({});
+    PodcastUploader.podcastMedia.remove({});
+    PodcastUploader.podcasts.remove({});
+});
+
 
 PodcastUploader.podcastMedia.allow({
     insert: function () {
@@ -50,7 +56,7 @@ Meteor.publish('podcastMedia', function (podcastId) {
 });
 
 Meteor.publish('podcasts', function () {
-   return PodcastUploader.podcasts.find(
-       {userId: this.userId}
-   );
+    return PodcastUploader.podcasts.find(
+        {userId: this.userId}
+    );
 });

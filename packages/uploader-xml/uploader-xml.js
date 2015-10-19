@@ -59,7 +59,7 @@ PodcastXml.generate = function (user, podcast, podcastMedia) {
             'itunes:summary': {'#cdata': '?'},
             'itunes:image': {'@href': '?'},
             'enclosure': {'@length': media.size(), '@type': media.type(), '@url': self.fullUrl(media.url())},
-            'guid': {'#text': media.url()},
+            'guid': {'#text': self.fullUrl(media.url())},
             'pubDate': {'#text': media.uploadedAt.toString()},
             'itunes:duration': {'#text': 'need to do'}
         }});
@@ -86,7 +86,9 @@ PodcastXml.generate = function (user, podcast, podcastMedia) {
                },
                'itunes:owner': {
                    'itunes:name': {'#text': user.username},
-                   'itunes:email': {'#text': '?'}
+                   'itunes:email': {
+                       '#text': user.emails? user.emails[0].address: 'no email'
+                   }
                },
                'itunes:image': {'@href': self.fullUrl(podcast.url())},
                '#list': categories,
@@ -94,7 +96,7 @@ PodcastXml.generate = function (user, podcast, podcastMedia) {
            }
        }
     };
-    //console.log(JSON.stringify(xml, undefined, 2));
+    console.log(JSON.stringify(xml, undefined, 2));
     return builder.create(xml, {encoding: 'UTF-8'}).end({pretty: true});
 };
 

@@ -1,7 +1,7 @@
 
 
 Accounts.ui.config({
-    passwordSignupFields: 'USERNAME_ONLY'
+    passwordSignupFields: 'USERNAME_AND_EMAIL'
 });
 
 
@@ -21,6 +21,7 @@ FlowRouter.route('/upload', {
 Template.podcastUploadForm.onCreated( function  () {
     var instance = this ;
     instance.loaded = new ReactiveVar(false);
+    instance.uploading = new ReactiveVar(false);
     var id = FlowRouter.getParam("id");
     instance.autorun( function  () {
         var subscription = instance.subscribe('podcastMedia', id);
@@ -42,13 +43,17 @@ Template.podcastUploadForm.onCreated( function  () {
         }else{
             return [];
         }
-    }
+    };
+    instance.isUploading = function () {
+      return instance.uploading.get();
+    };
 });
 
 var uploadingId = null;
 Template.podcastUploadForm.events({
     'submit [data-upload-form]': function (event, template) {
         event.preventDefault();
+        template.uploading.set(true);
         var id = FlowRouter.getParam("id");
         var fsFile = PodcastUploader.addPodcastMedia(template, id);
         uploadingId = fsFile._id;
@@ -59,7 +64,8 @@ Template.podcastUploadForm.events({
 
 Template.podcastUploadForm.helpers({
     uploadProgress: function () {
-        var uploadProgress = Template.instance().uploadProgress();
+        var instance = Template.instance();
+        var uploadProgress = instance.uploadProgress();
         var style = uploadProgress? 'width:'+uploadProgress+'%;': 'width: 0%;';
         var value = uploadProgress? uploadProgress: 0;
         //$('.progress-bar').css('width',value+'%');
@@ -69,10 +75,14 @@ Template.podcastUploadForm.helpers({
         };
         console.log(progress);
         if(uploadProgress === null && uploadingId !== null && value === 0){
+            instance.uploading.set(false);
             $('#collapse-upload-podcast').collapse('hide');
             uploadingId = null;
         }
         return progress;
+    },
+    uploading: function () {
+        return Template.instance().isUploading();
     }
 });
 
