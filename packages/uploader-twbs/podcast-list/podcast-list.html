@@ -1,0 +1,38 @@
+<template name="podcastListNav">
+    <li><a href="/podcasts/new">New</a></li>
+</template>
+
+<template name="podcastList">
+    <ul class="list-group">
+        {{#if currentUser}}
+            {{#each podcasts}}
+            <a href="podcasts/show/{{_id}}" class="list-group-item">
+                {{> podcastListItem}}
+            </a>
+            {{else}}
+                <li class="list-group-item">
+                    No podcasts found
+                </li>
+            {{/each}}
+        {{else}}
+            <li class="list-group-item">
+                Please Sign In
+            </li>
+        {{/if}}
+    </ul>
+</template>
+
+<template name="podcastListItem">
+        <div class="row">
+            <div class="col-sm-4">
+                <img src="{{url}}" alt="" class="img-rounded" width="128" height="128">
+            </div>
+            <div class="col-sm-8">
+                <h5><b>Title: </b>{{podcastInfo.title}}</h5>
+                <h6><b>Subtitle: </b>{{podcastInfo.subtitle}}</h6>
+                <h6><b>RSS Feed: </b>{{podcastUrl _id}}</h6>
+                <h6><b>Date Created: </b>{{uploadedAt}}</h6>
+                <h6><b>Description: </b>{{podcastInfo.description}}</h6>
+            </div>
+        </div>
+</template>

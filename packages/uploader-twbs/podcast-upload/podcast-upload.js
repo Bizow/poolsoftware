@@ -4,28 +4,16 @@ Accounts.ui.config({
     passwordSignupFields: 'USERNAME_ONLY'
 });
 
-Meteor.startup(function () {
-   Tracker.autorun(function () {
-      if(!Meteor.user()){
-          FlowRouter.go('/');
-      }
-   });
-});
 
 FlowRouter.route('/', {
     action: function(params, queryParams) {
-        console.log('/')
-        BlazeLayout.render('layout');
+        FlowRouter.go('/podcasts');
     }
 });
 
 FlowRouter.route('/upload', {
     action: function(params, queryParams) {
-        if(!Meteor.user()){
-            FlowRouter.go('/');
-        }else{
-            BlazeLayout.render('layout', {main: 'podcastUploadForm' });
-        }
+        BlazeLayout.render('layout', {main: 'podcastUploadForm' });
     }
 });
 
@@ -33,16 +21,11 @@ FlowRouter.route('/upload', {
 Template.podcastUploadForm.onCreated( function  () {
     var instance = this ;
     instance.loaded = new ReactiveVar(false);
-
+    var id = FlowRouter.getParam("id");
     instance.autorun( function  () {
-        console.log("Asking for  podcasts...");
-        var subscription = instance.subscribe('podcasts');
-
+        var subscription = instance.subscribe('podcastMedia', id);
         if(subscription.ready()){
-            console.log("Received  podcasts.");
             instance.loaded.set(true);
-        }else{
-            console.log("Subscription is not ready yet.");
         }
     });
     instance.uploadProgress = function () {
@@ -66,7 +49,8 @@ var uploadingId = null;
 Template.podcastUploadForm.events({
     'submit [data-upload-form]': function (event, template) {
         event.preventDefault();
-        var fsFile = PodcastUploader.submitForm(template);
+        var id = FlowRouter.getParam("id");
+        var fsFile = PodcastUploader.addPodcastMedia(template, id);
         uploadingId = fsFile._id;
         console.log(uploadingId);
         return false;
@@ -85,9 +69,18 @@ Template.podcastUploadForm.helpers({
         };
         console.log(progress);
         if(uploadProgress === null && uploadingId !== null && value === 0){
-            FlowRouter.go('/success/'+uploadingId);
+            $('#collapse-upload-podcast').collapse('hide');
             uploadingId = null;
         }
         return progress;
+    }
+});
+
+Template.podcastMediaList.helpers({
+    podcastMediaUrl: function () {
+        var root = Meteor.absoluteUrl();
+        root = root.substring(0, root.length - 1);
+        var url = this.url();
+        return root+url;
     }
 });

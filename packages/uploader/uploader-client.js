@@ -1,8 +1,22 @@
 
-PodcastUploader.submitForm = function (template) {
+PodcastUploader.addPodcastMedia = function (template, podcastId) {
     var self = this;
     var fsFile = self.formToFsFile(template);
+    fsFile.podcastId = podcastId;
     PodcastUploader.podcastMedia.insert(fsFile, function (error, fileObj) {
+        if(error){
+            console.log(error);
+        }else{
+            console.log(fileObj);
+        }
+    });
+    return fsFile;
+};
+
+PodcastUploader.addPodcast = function (template) {
+    var self = this;
+    var fsFile = self.formToFsFile(template);
+    PodcastUploader.podcasts.insert(fsFile, function (error, fileObj) {
         if(error){
             console.log(error);
         }else{

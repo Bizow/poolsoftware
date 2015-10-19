@@ -21,14 +21,18 @@ Package.onUse(function(api) {
     //api.use('ian:accounts-ui-bootstrap-3');
     api.use('kadira:blaze-layout');
     api.use('kadira:flow-router@2.6.2');
-    api.addFiles('uploader-nav-twbs.html', 'client');
-    api.addFiles('uploader-form-twbs.html', 'client');
-    api.addFiles('uploader-form-twbs.js','client');
-    api.addFiles('uploader-success-twbs.html', 'client');
-    api.addFiles('uploader-success-twbs.js','client');
-    api.addFiles('uploader-podcastlist-twbs.html', 'client');
-    api.addFiles('uploader-podcastlist-twbs.js','client');
-    api.addFiles('uploader-main.html', 'client');
+
+    api.addFiles([
+        'podcast-list/podcast-list.html',
+        'podcast-list/podcast-list.js',
+        'podcast-new/podcast-new.html',
+        'podcast-new/podcast-new.js',
+        'podcast-show/podcast-show.html',
+        'podcast-show/podcast-show.js',
+        'podcast-upload/podcast-upload.html',
+        'podcast-upload/podcast-upload.js',
+        'uploader-main.html'
+    ], 'client');
 });
 
 Package.onTest(function(api) {

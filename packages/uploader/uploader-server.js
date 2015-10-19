@@ -18,7 +18,39 @@ PodcastUploader.podcastMedia.allow({
     }
 });
 
+PodcastUploader.podcasts.allow({
+    insert: function () {
+        securityCheck();
+        return true;
+    },
+    update: function () {
+        securityCheck();
+        return true;
+    },
+    download: function(userId, fileObj) {
+        securityCheck();
+        return true
+    },
+    remove: function () {
+        securityCheck();
+        return true;
+    }
+});
+
+Meteor.publish('podcast', function (id) {
+    return PodcastUploader.podcasts.find(
+        {_id: id, userId: this.userId}
+    );
+});
+
+Meteor.publish('podcastMedia', function (podcastId) {
+    return PodcastUploader.podcastMedia.find(
+        {podcastId: podcastId, userId: this.userId}
+    );
+});
 
 Meteor.publish('podcasts', function () {
-    return PodcastUploader.podcastMedia.find({userId: this.userId});
+   return PodcastUploader.podcasts.find(
+       {userId: this.userId}
+   );
 });
