@@ -39,6 +39,7 @@ Api.addRoute('rss/:id', {}, {
 PodcastXml = {};
 
 PodcastXml.generate = function (user, podcast, podcastMedia) {
+    var self = this;
     var categories = [
         {'itunes:category': {'@text': 'Technology', '#list': [{'itunes:category': {'@text':'Gadgets'}}]}},
         {'itunes:category': {'@text': 'TV &amp; Film'}}
@@ -57,7 +58,7 @@ PodcastXml.generate = function (user, podcast, podcastMedia) {
             },
             'itunes:summary': {'#cdata': '?'},
             'itunes:image': {'@href': '?'},
-            'enclosure': {'@length': media.size(), '@type': media.type(), '@url': media.url()},
+            'enclosure': {'@length': media.size(), '@type': media.type(), '@url': self.fullUrl(media.url())},
             'guid': {'#text': media.url()},
             'pubDate': {'#text': media.uploadedAt.toString()},
             'itunes:duration': {'#text': 'need to do'}
@@ -87,7 +88,7 @@ PodcastXml.generate = function (user, podcast, podcastMedia) {
                    'itunes:name': {'#text': user.username},
                    'itunes:email': {'#text': '?'}
                },
-               'itunes:image': {'@href': podcast.url()},
+               'itunes:image': {'@href': self.fullUrl(podcast.url())},
                '#list': categories,
                '#list': items
            }
@@ -95,4 +96,10 @@ PodcastXml.generate = function (user, podcast, podcastMedia) {
     };
     //console.log(JSON.stringify(xml, undefined, 2));
     return builder.create(xml, {encoding: 'UTF-8'}).end({pretty: true});
+};
+
+PodcastXml.fullUrl = function (url) {
+    var root = Meteor.absoluteUrl();
+    root = root.substring(0, root.length - 1);
+    return root+url;
 };
