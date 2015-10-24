@@ -46,14 +46,15 @@ PodcastXml.generate = function (user, podcast, podcastMedia) {
     podcastMedia.forEach(function (media) {
         items.push({'item': {
             'title': {
-                '#text': media.podcastInfo.name? media.podcastInfo.name: 'title'
+                '#text': media.podcastInfo.title? media.podcastInfo.title: 'title'
             },
+            'link': {'#text': self.fullUrl(media.url())},
             'itunes:author': {'#text': user.username},
             'itunes:subtitle': {
                 '#text': media.podcastInfo.subtitle? media.podcastInfo.subtitle: 'subtitle'
             },
-            'itunes:summary': {'#cdata': '?'},
-            'itunes:image': {'@href': '?'},
+            'itunes:summary': {'#text': media.podcastInfo.summary},
+            'itunes:image': {'@href': self.fullUrl(podcast.url())},
             'enclosure': {'@length': media.size(), '@type': media.type(), '@url': self.fullUrl(media.url())},
             'guid': {'#text': self.fullUrl(media.url())},
             'pubDate': {'#text': media.uploadedAt.toString()},
@@ -66,10 +67,11 @@ PodcastXml.generate = function (user, podcast, podcastMedia) {
            '@xmlns:itunes': 'http://www.itunes.com/dtds/podcast-1.0.dtd',
            '@version': '2.0',
            'channel' : {
-               'atom:link': {'@href': self.fullUrl('api/rss/'+podcast._id)},
+               //'atom:link': {'@href': self.fullUrl('/api/rss/'+podcast._id)},
                'title': {
                    '#text': podcast.podcastInfo.title? podcast.podcastInfo.title: 'title'
                },
+               'pubDate': {'#text': podcast.uploadedAt.toString()},
                'link': {'#text': podcast.podcastInfo.link},
                'language': {'#text': 'en-us'},
                'copyright': {'#text': 'All rights reserved'},
