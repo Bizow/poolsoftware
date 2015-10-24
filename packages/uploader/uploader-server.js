@@ -1,9 +1,12 @@
-Meteor.startup(function () {
-    //Meteor.users.remove({});
-    //PodcastUploader.podcastMedia.remove({});
-    //PodcastUploader.podcasts.remove({});
-});
 
+//TODO remove this after development
+Meteor.methods({
+    reset: function () {
+        Meteor.users.remove({});
+        PodcastUploader.podcastMedia.remove({});
+        PodcastUploader.podcasts.remove({});
+    }
+});
 
 PodcastUploader.podcastMedia.allow({
     insert: function () {
