@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" version="2.0">
+    <channel>
+        <atom:link href="http://feeds.soundcloud.com/users/soundcloud:users:68883019/sounds.rss" rel="self" type="application/rss+xml"/>
+        <title>TSM Presque Isle</title>
+        <link>http://www.1019therock.com</link>
+        <pubDate>Wed, 24 Jun 2015 00:46:56 +0000</pubDate>
+        <lastBuildDate>Wed, 24 Jun 2015 00:46:56 +0000</lastBuildDate>
+        <ttl>60</ttl>
+        <language>en</language>
+        <copyright>All rights reserved</copyright>
+        <webMaster>feeds@soundcloud.com (SoundCloud Feeds)</webMaster>
+        <description>The Townsquare Media Presque Isle Podcast features local artists and musicians from Northern Maine and Western New Brunswick. If you're a local artist and would like to be part of the podcast send an email to josh.archer@townsquaremedia.com. Make sure to include links to your work so we can check out your awesomeness.
+
+            Visit the wonderful Townsquare Media Presque Isle websites to keep track of the goings on in Northern Maine and Western New Brunswick: http://q961.com, http://bigcountry969.com, http://1019therock.com.</description>
+        <itunes:subtitle>The Townsquare Media Presque Isle Podcast feature…</itunes:subtitle>
+        <itunes:owner>
+            <itunes:name>TSM Presque Isle</itunes:name>
+            <itunes:email>feeds@soundcloud.com</itunes:email>
+        </itunes:owner>
+        <itunes:author>Townsquare Media Presque Isle</itunes:author>
+        <itunes:explicit>yes</itunes:explicit>
+        <itunes:image href="http://i1.sndcdn.com/avatars-000061939042-o3fa8k-original.png"/>
+        <image>
+            <url>http://i1.sndcdn.com/avatars-000061939042-o3fa8k-original.png</url>
+            <title>TSM Presque Isle</title>
+            <link>http://www.1019therock.com</link>
+        </image>
+        <itunes:category text="Arts"/>
+        <item>
+            <guid isPermaLink="false">tag:soundcloud,2010:tracks/149520188</guid>
+            <title>TSM Presque Isle 9: Super Pod #1</title>
+            <pubDate>Wed, 14 May 2014 17:06:26 +0000</pubDate>
+            <link>https://soundcloud.com/tsmpi/tsm-presque-isle-9-super-pod-1</link>
+            <itunes:duration>00:37:37</itunes:duration>
+            <itunes:author>Townsquare Media Presque Isle</itunes:author>
+            <itunes:explicit>yes</itunes:explicit>
+            <itunes:summary>We're back! And with a SUPER POD! We've got an interview with NB artist Katy Karnes and PI artist Lin Trombley. We also have tunes from Diary of Snow, Penny Blacks, Crunk Witch, and Mellow Endeavor.</itunes:summary>
+            <itunes:subtitle>We're back! And with a SUPER POD! We've got an in…</itunes:subtitle>
+            <description>We're back! And with a SUPER POD! We've got an interview with NB artist Katy Karnes and PI artist Lin Trombley. We also have tunes from Diary of Snow, Penny Blacks, Crunk Witch, and Mellow Endeavor.</description>
+            <enclosure type="audio/mpeg" url="http://feeds.soundcloud.com/stream/149520188-tsmpi-tsm-presque-isle-9-super-pod-1.mp3" length="54105800"/>
+            <itunes:image href="http://i1.sndcdn.com/avatars-000061939042-o3fa8k-original.png"/>
+        </item>
+        <item>
+            <guid isPermaLink="false">tag:soundcloud,2010:tracks/141347135</guid>
+            <title>TSM Presque Isle 8: Shawn Cote And Penny Blacks</title>
+            <pubDate>Tue, 25 Mar 2014 14:32:14 +0000</pubDate>
+            <link>https://soundcloud.com/tsmpi/tsm-presque-isle-9-shawn-cote</link>
+            <itunes:duration>00:21:31</itunes:duration>
+            <itunes:author>Townsquare Media Presque Isle</itunes:author>
+            <itunes:explicit>yes</itunes:explicit>
+            <itunes:summary>On this week's podcast comic artist/writer Shawn Cote stops by to talk about his web comic 'Jillpoke Bohemia' and I have some fantastic tunes from New Brunswick's Penny Blacks.</itunes:summary>
+            <itunes:subtitle>On this week's podcast comic artist/writer Shawn …</itunes:subtitle>
+            <description>On this week's podcast comic artist/writer Shawn Cote stops by to talk about his web comic 'Jillpoke Bohemia' and I have some fantastic tunes from New Brunswick's Penny Blacks.</description>
+            <enclosure type="audio/mpeg" url="http://feeds.soundcloud.com/stream/141347135-tsmpi-tsm-presque-isle-9-shawn-cote.mp3" length="30949722"/>
+            <itunes:image href="http://i1.sndcdn.com/avatars-000061939042-o3fa8k-original.png"/>
+        </item>
+        <item>
+            <guid isPermaLink="false">tag:soundcloud,2010:tracks/137709940</guid>
+            <title>TSM Presque Isle 7: Jeff Ouellette and James Blanchard</title>
+            <pubDate>Mon, 03 Mar 2014 16:20:44 +0000</pubDate>
+            <link>https://soundcloud.com/tsmpi/tsm-presque-isle-7-jeff</link>
+            <itunes:duration>00:21:33</itunes:duration>
+            <itunes:author>Townsquare Media Presque Isle</itunes:author>
+            <itunes:explicit>yes</itunes:explicit>
+            <itunes:summary>This week I've got an interview with local artist Jeff Ouellette and music from New Brunswick artist James Blanchard.</itunes:summary>
+            <itunes:subtitle>This week I've got an interview with local artist…</itunes:subtitle>
+            <description>This week I've got an interview with local artist Jeff Ouellette and music from New Brunswick artist James Blanchard.</description>
+            <enclosure type="audio/mpeg" url="http://feeds.soundcloud.com/stream/137709940-tsmpi-tsm-presque-isle-7-jeff.mp3" length="0"/>
+            <itunes:image href="http://i1.sndcdn.com/avatars-000061939042-o3fa8k-original.png"/>
+        </item>
+        <item>
+            <guid isPermaLink="false">tag:soundcloud,2010:tracks/137704083</guid>
+            <title>TSM Presque Isle 6: Jordan LaFaver 'Diary Of Snow'</title>
+            <pubDate>Mon, 03 Mar 2014 15:38:36 +0000</pubDate>
+            <link>https://soundcloud.com/tsmpi/tsm-presque-isle-6-jordan</link>
+            <itunes:duration>00:18:48</itunes:duration>
+            <itunes:author>Townsquare Media Presque Isle</itunes:author>
+            <itunes:explicit>yes</itunes:explicit>
+            <itunes:summary>This week I have an interview with Jordan LaFaver of 'Diary of Snow'. </itunes:summary>
+            <itunes:subtitle>This week I have an interview with Jordan LaFaver…</itunes:subtitle>
+            <description>This week I have an interview with Jordan LaFaver of 'Diary of Snow'. </description>
+            <enclosure type="audio/mpeg" url="http://feeds.soundcloud.com/stream/137704083-tsmpi-tsm-presque-isle-6-jordan.mp3" length="0"/>
+            <itunes:image href="http://i1.sndcdn.com/avatars-000061939042-o3fa8k-original.png"/>
+        </item>
+        <item>
+            <guid isPermaLink="false">tag:soundcloud,2010:tracks/133229256</guid>
+            <title>TSM Presque Isle 5: Esther Arce and Artificial Snow Day</title>
+            <pubDate>Wed, 05 Feb 2014 18:42:01 +0000</pubDate>
+            <link>https://soundcloud.com/tsmpi/tsm-presque-isle-5-esther-arce</link>
+            <itunes:duration>00:21:35</itunes:duration>
+            <itunes:author>Townsquare Media Presque Isle</itunes:author>
+            <itunes:explicit>yes</itunes:explicit>
+            <itunes:summary>This week, glass artist and astrologer Esther Arce stops by for a chat plus I've got tunes from Artificial Snow Day.</itunes:summary>
+            <itunes:subtitle>This week, glass artist and astrologer Esther Arc…</itunes:subtitle>
+            <description>This week, glass artist and astrologer Esther Arce stops by for a chat plus I've got tunes from Artificial Snow Day.</description>
+            <enclosure type="audio/mpeg" url="http://feeds.soundcloud.com/stream/133229256-tsmpi-tsm-presque-isle-5-esther-arce.mp3" length="0"/>
+            <itunes:image href="http://i1.sndcdn.com/avatars-000061939042-o3fa8k-original.png"/>
+        </item>
+        <item>
+            <guid isPermaLink="false">tag:soundcloud,2010:tracks/129682871</guid>
+            <title>TSM Presque Isle 4: Rowena Forbes And On The Slab</title>
+            <pubDate>Wed, 15 Jan 2014 19:08:26 +0000</pubDate>
+            <link>https://soundcloud.com/tsmpi/tsm-presque-isle-4-rowena</link>
+            <itunes:duration>00:24:45</itunes:duration>
+            <itunes:author>Townsquare Media Presque Isle</itunes:author>
+            <itunes:explicit>yes</itunes:explicit>
+            <itunes:summary>This week we have an interview with local artist Rowena Forbes and music from 'On The Slab'. </itunes:summary>
+            <itunes:subtitle>This week we have an interview with local artist …</itunes:subtitle>
+            <description>This week we have an interview with local artist Rowena Forbes and music from 'On The Slab'. </description>
+            <enclosure type="audio/mpeg" url="http://feeds.soundcloud.com/stream/129682871-tsmpi-tsm-presque-isle-4-rowena.mp3" length="0"/>
+            <itunes:image href="http://i1.sndcdn.com/avatars-000061939042-o3fa8k-original.png"/>
+        </item>
+        <item>
+            <guid isPermaLink="false">tag:soundcloud,2010:tracks/127742213</guid>
+            <title>TSM Presque Isle 3: Verbal Assault</title>
+            <pubDate>Fri, 03 Jan 2014 20:35:00 +0000</pubDate>
+            <link>https://soundcloud.com/tsmpi/tsm-presque-isle-3-verbal</link>
+            <itunes:duration>00:15:50</itunes:duration>
+            <itunes:author>Townsquare Media Presque Isle</itunes:author>
+            <itunes:explicit>yes</itunes:explicit>
+            <itunes:summary>BuzzKill and Cyanide have been rapping in Houlton for a few years now. They stopped by the station to chat about how they got started and what it's like to be a rapper in Northern Maine.</itunes:summary>
+            <itunes:subtitle>BuzzKill and Cyanide have been rapping in Houlton…</itunes:subtitle>
+            <description>BuzzKill and Cyanide have been rapping in Houlton for a few years now. They stopped by the station to chat about how they got started and what it's like to be a rapper in Northern Maine.</description>
+            <enclosure type="audio/mpeg" url="http://feeds.soundcloud.com/stream/127742213-tsmpi-tsm-presque-isle-3-verbal.mp3" length="0"/>
+            <itunes:image href="http://i1.sndcdn.com/avatars-000061939042-o3fa8k-original.png"/>
+        </item>
+    </channel>
+</rss>

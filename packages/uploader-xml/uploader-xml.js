@@ -40,10 +40,6 @@ PodcastXml = {};
 
 PodcastXml.generate = function (user, podcast, podcastMedia) {
     var self = this;
-    var categories = [
-        {'itunes:category': {'@text': 'Technology', '#list': [{'itunes:category': {'@text':'Gadgets'}}]}},
-        {'itunes:category': {'@text': 'TV &amp; Film'}}
-    ];
 
     var items = [];
 
@@ -70,17 +66,18 @@ PodcastXml.generate = function (user, podcast, podcastMedia) {
            '@xmlns:itunes': 'http://www.itunes.com/dtds/podcast-1.0.dtd',
            '@version': '2.0',
            'channel' : {
+               'atom:link': {'@href': self.fullUrl('api/rss/'+podcast._id)},
                'title': {
                    '#text': podcast.podcastInfo.title? podcast.podcastInfo.title: 'title'
                },
-               'link': {'#text': '?'},
+               'link': {'#text': podcast.podcastInfo.link},
                'language': {'#text': 'en-us'},
-               'copyright': {'#text': '?'},
+               'copyright': {'#text': 'All rights reserved'},
                'itunes:subtitle': {
                    '#text': podcast.podcastInfo.subtitle? podcast.podcastInfo.subtitle: 'subtitle'
                },
                'itunes:author': {'#text': user.username},
-               'itunes:summary': {'#text': '?'},
+               'itunes:summary': {'#text': podcast.podcastInfo.summary},
                'description': {
                    '#text': podcast.podcastInfo.description? podcast.podcastInfo.description: 'description'
                },
@@ -91,7 +88,7 @@ PodcastXml.generate = function (user, podcast, podcastMedia) {
                    }
                },
                'itunes:image': {'@href': self.fullUrl(podcast.url())},
-               '#list': categories,
+               'itunes:category': {'#text': podcast.podcastInfo.category},
                '#list': items
            }
        }
