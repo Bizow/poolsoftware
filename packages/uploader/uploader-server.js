@@ -1,7 +1,7 @@
 Meteor.startup(function () {
-    Meteor.users.remove({});
-    PodcastUploader.podcastMedia.remove({});
-    PodcastUploader.podcasts.remove({});
+    //Meteor.users.remove({});
+    //PodcastUploader.podcastMedia.remove({});
+    //PodcastUploader.podcasts.remove({});
 });
 
 
