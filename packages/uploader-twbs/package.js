@@ -13,6 +13,7 @@ Package.describe({
 Package.onUse(function(api) {
     api.versionsFrom('1.2.0.1');
     api.use('templating');
+    api.use('momentjs:moment');
     api.use('reactive-var');
     api.use('tracker');
     api.use('uploader');

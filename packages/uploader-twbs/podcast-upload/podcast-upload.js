@@ -1,9 +1,7 @@
 
-
 Accounts.ui.config({
     passwordSignupFields: 'USERNAME_AND_EMAIL'
 });
-
 
 FlowRouter.route('/', {
     action: function(params, queryParams) {
@@ -16,7 +14,6 @@ FlowRouter.route('/upload', {
         BlazeLayout.render('layout', {main: 'podcastUploadForm' });
     }
 });
-
 
 Template.podcastUploadForm.onCreated( function  () {
     var instance = this ;
@@ -83,14 +80,5 @@ Template.podcastUploadForm.helpers({
     },
     uploading: function () {
         return Template.instance().isUploading();
-    }
-});
-
-Template.podcastMediaList.helpers({
-    podcastMediaUrl: function () {
-        var root = Meteor.absoluteUrl();
-        root = root.substring(0, root.length - 1);
-        var url = this.url();
-        return root+url;
     }
 });

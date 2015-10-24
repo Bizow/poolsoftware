@@ -25,11 +25,12 @@
 <template name="podcastListItem">
         <div class="row">
             <div class="col-sm-4">
-                <img src="{{url}}" alt="" class="img-rounded" width="128" height="128">
+                <img src="{{url}}" alt="" class="img-rounded" width="100%" height="100%">
             </div>
             <div class="col-sm-8">
                 <h5><b>Title: </b>{{podcastInfo.title}}</h5>
                 <h6><b>Subtitle: </b>{{podcastInfo.subtitle}}</h6>
+                <h6><b>Summary: </b>{{podcastInfo.summary}}</h6>
                 <h6><b>Link: </b>{{podcastInfo.link}}</h6>
                 <h6><b>Category: </b>{{podcastInfo.category}}</h6>
                 <h6><b>RSS Feed: </b>{{podcastUrl _id}}</h6>

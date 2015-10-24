@@ -5,6 +5,12 @@ Meteor.methods({
         Meteor.users.remove({});
         PodcastUploader.podcastMedia.remove({});
         PodcastUploader.podcasts.remove({});
+    },
+    updatePodcastMediaDuration: function (id, duration) {
+        return PodcastUploader.podcastMedia.update(
+            id,
+            {$set: {"podcastInfo.duration": duration}}
+        );
     }
 });
 

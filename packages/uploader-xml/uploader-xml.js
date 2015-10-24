@@ -18,9 +18,9 @@ Api.addRoute('rss/:id', {}, {
         }
         var podcastMedia = PodcastUploader.podcastMedia.find({podcastId: podcastId}).fetch();
         if(podcastMedia.length === 0){
-            errors.push('No podcast media found for podcast id '+podcastid)
+            errors.push('No podcast media found for podcast id '+podcastId)
         }
-        var user = Meteor.users.findOne(podcast.userId);
+        var user = podcast? Meteor.users.findOne(podcast.userId): null;
         if(!user){
             errors.push('No user found.');
         }
@@ -58,7 +58,7 @@ PodcastXml.generate = function (user, podcast, podcastMedia) {
             'enclosure': {'@length': media.size(), '@type': media.type(), '@url': self.fullUrl(media.url())},
             'guid': {'#text': self.fullUrl(media.url())},
             'pubDate': {'#text': media.uploadedAt.toString()},
-            'itunes:duration': {'#text': 'need to do'}
+            'itunes:duration': {'#text': media.podcastInfo.duration? media.podcastInfo.duration: 0}
         }});
     });
 

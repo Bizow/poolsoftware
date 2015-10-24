@@ -73,8 +73,44 @@ Template.podcastMediaList.onCreated( function  () {
 });
 
 Template.podcastMediaList.helpers({
-   podcastMedia: function () {
-       var media = Template.instance().podcastMedia();
-       return media;
-   }
+    podcastMedia: function () {
+        var media = Template.instance().podcastMedia();
+        return media;
+    }
+});
+
+Template.podcastMediaListItem.helpers({
+    podcastMediaUrl: function () {
+        var root = Meteor.absoluteUrl();
+        root = root.substring(0, root.length - 1);
+        var url = this.url();
+        return root+url;
+    },
+    formatSeconds: function (seconds) {
+        var duration = 0;
+        if(seconds){
+            var mins = moment.duration(seconds, 'seconds').asMinutes();
+            duration = Math.round(mins)+' minutes'
+        }
+        return duration;
+    }
+});
+
+Template.podcastMediaListItem.onRendered(function () {
+    var instance = this;
+    var media = instance.data;
+    var audio = instance.find('audio');
+    console.log(audio, media);
+    if(media.podcastInfo.duration === undefined){
+        audio.oncanplaythrough = function () {
+            var duration = audio.duration;
+            Meteor.call('updatePodcastMediaDuration', media._id, duration, function (error, result) {
+                if(error){
+                    console.log('updatePodcastMediaDuration error:',error);
+                }else{
+                    console.log('updatePodcastMediaDuration result:',result);
+                }
+            })
+        }
+    }
 });
