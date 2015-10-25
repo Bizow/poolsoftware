@@ -31,3 +31,4 @@ Template.podcastList.helpers({
         return Template.instance().podcasts();
     }
 });
+//				Podcast list filter, podcastMedia duration with audio player and updated xml gen
