@@ -5,6 +5,7 @@
 <template name="podcastList">
     <ul class="list-group">
         {{#if currentUser}}
+            {{> podcastListFilter}}
             {{#each podcasts}}
             <a href="podcasts/show/{{_id}}" class="list-group-item">
                 {{> podcastListItem}}

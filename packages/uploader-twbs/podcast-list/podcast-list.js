@@ -9,6 +9,8 @@ FlowRouter.route('/podcasts', {
 Template.podcastList.onCreated( function  () {
     var instance = this ;
     instance.loaded = new ReactiveVar(false);
+    instance.filterOn = new ReactiveVar('title');
+    instance.filterValue = new ReactiveVar(' ');
     instance.autorun( function  () {
         var subscription = instance.subscribe('podcasts');
         if(subscription.ready()){
@@ -16,7 +18,11 @@ Template.podcastList.onCreated( function  () {
         }
     });
     instance.podcasts = function () {
-        return PodcastUploader.podcasts.find();
+        var prop = "podcastInfo."+instance.filterOn.get();
+        var regex = new RegExp(instance.filterValue.get());
+        var filter = {};
+        filter[prop] = {$regex: regex, $options: 'i'};
+        return PodcastUploader.podcasts.find(filter);
     }
 });
 

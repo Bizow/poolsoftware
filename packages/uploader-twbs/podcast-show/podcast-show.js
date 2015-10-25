@@ -93,6 +93,10 @@ Template.podcastMediaListItem.helpers({
             duration = Math.round(mins)+' minutes'
         }
         return duration;
+    },
+    mediaUrlExists: function () {
+        var media = this;
+        return media.url()? media.url(): false;
     }
 });
 
@@ -101,16 +105,19 @@ Template.podcastMediaListItem.onRendered(function () {
     var media = instance.data;
     var audio = instance.find('audio');
     console.log(audio, media);
-    if(media.podcastInfo.duration === undefined){
-        audio.oncanplaythrough = function () {
-            var duration = audio.duration;
-            Meteor.call('updatePodcastMediaDuration', media._id, duration, function (error, result) {
-                if(error){
-                    console.log('updatePodcastMediaDuration error:',error);
-                }else{
-                    console.log('updatePodcastMediaDuration result:',result);
-                }
-            })
+    //autorun works because media.url() is reactive
+    Tracker.autorun(function () {
+        if(media.podcastInfo.duration === undefined && media.url() !== null){
+            audio.oncanplaythrough = function () {
+                var duration = audio.duration;
+                Meteor.call('updatePodcastMediaDuration', media._id, duration, function (error, result) {
+                    if(error){
+                        console.log('updatePodcastMediaDuration error:',error);
+                    }else{
+                        console.log('updatePodcastMediaDuration result:',result);
+                    }
+                })
+            }
         }
-    }
+    });
 });

@@ -45,8 +45,15 @@
         <h6><b>Description: </b>{{podcastInfo.description}}</h6>
         <h6><b>Uploaded At: </b>{{uploadedAt}}</h6>
         <h6><b>Size: </b>{{this.size}}</h6>
-        <h6><b>Duration: </b>{{formatSeconds podcastInfo.duration}}</h6>
-        <h6><b>Media Link: </b>{{podcastMediaUrl}}</h6>
-        <audio controls src="{{podcastMediaUrl}}"></audio>
+        {{#if mediaUrlExists}}
+            <h6><b>Duration: </b>{{formatSeconds podcastInfo.duration}}</h6>
+            <h6><b>Media Link: </b>{{podcastMediaUrl}}</h6>
+            <audio controls src="{{podcastMediaUrl}}"></audio>
+        {{else}}
+            <h6>
+                <b>Loading Media Player</b>
+                {{> spinner}}
+            </h6>
+        {{/if}}
     </li>
 </template>

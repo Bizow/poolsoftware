@@ -14,7 +14,9 @@ Package.onUse(function(api) {
     api.versionsFrom('1.2.0.1');
     api.use('templating');
     api.use('momentjs:moment');
+    api.use('sacha:spin');
     api.use('reactive-var');
+    api.use('reactive-dict');
     api.use('tracker');
     api.use('uploader');
     api.use('twbs:bootstrap');
@@ -24,10 +26,13 @@ Package.onUse(function(api) {
     api.use('kadira:flow-router@2.6.2');
 
     api.addFiles([
+        'podcast-filter/podcast-filter.html',
+        'podcast-filter/podcast-filter.js',
         'podcast-list/podcast-list.html',
         'podcast-list/podcast-list.js',
         'podcast-new/podcast-new.html',
         'podcast-new/podcast-new.js',
+        'podcast-show/podcast-show.css',
         'podcast-show/podcast-show.html',
         'podcast-show/podcast-show.js',
         'podcast-upload/podcast-upload.html',
