@@ -19,6 +19,7 @@ Package.onUse(function(api) {
     api.use('mongo');
     api.use('cfs:standard-packages@0.5.9');
     api.use('cfs:gridfs');
+    api.use('cfs:s3');
     api.use('cfs:ui');
     api.addFiles('uploader-shared.js');
     api.addFiles('uploader-server.js', 'server');
